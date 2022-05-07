@@ -1,0 +1,15 @@
+{
+    "nota": [
+        {
+            "id": 1,
+            "aluno": "Zé",
+            "matricula": "0001",
+            "ano_letivo": 2021,
+            "turma": "1001",
+            "disciplina": "matemática",
+            "bimestre": 1,
+            "recuperacao_sn": "n",
+            "nota": 0
+        }
+    ]
+}
