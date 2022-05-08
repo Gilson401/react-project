@@ -34,7 +34,7 @@ const Paralax = () => {
             <h4>Role para baixo e veja as imagens de fundo alternarem.</h4>
 
             {imagens.map((item, index) =>
-                <Parb ind={index} img={item} />
+                <Parb key={index} ind={index} img={item} />
             )}
         </StConteudo>
     )

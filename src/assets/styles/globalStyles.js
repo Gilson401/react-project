@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dog from '../images/dog.jpg'
+
 
 
 
@@ -9,8 +9,6 @@ const GlobalStyle = createGlobalStyle`
         margin:0;
         padding: 0;
         outline: 0;
-        /* -webkit-font-smoothing: antialiased; */
-        /* font-family: 'Londrina Solid', cursive; */
     }
 
 html {

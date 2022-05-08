@@ -1,32 +1,41 @@
-import React from 'react'
-import { Dropdown,  Container, Nav, Navbar } from 'react-bootstrap'
+import React, {useRef, useEffect, useState } from 'react'
+import { Dropdown, Container, Nav, Navbar } from 'react-bootstrap'
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components'
 import history from '../../config/history';
+import App from '../../App'
 
 
 const Layout = ({ children, ...props }) => {
 
-    const linkes = [
-        { path: "/alloptions", label: "Opções" },
-        { path: "/grafico", label: "Gráfico" },
-        { path: "/trade", label: "Análises" },
-        { path: "/tabelasdestaques", label: "Destaques" },
-        { path: "/comparador", label: "Comparador" },
-        { path: "/calculadora", label: "Calculadora" },
-        { path: "/quadro", label: "Quadro" }]
+    const navEl = useRef(null)
+    const footerEl = useRef(null)
+    const [heigth, setHeigth] = useState(56)
+    const [minHeight, setMinHeight] = useState(200)
 
+    const location = useLocation()
+    const [brand, setBrand] = useState('')
+    
+    useEffect(() => {
+        const currentPath = location.pathname;
+        const propsBrand = App.links.find(link => link.path === currentPath ).label
+        setBrand(propsBrand)
+      }, [location]);
 
     function CollapseNavbarBootstrap() {
+
+
+
         return (
-            <Navbar collapseOnSelect expand="lg" className='red' variant="light">
+            <Navbar  collapseOnSelect expand="lg" className='red' variant="light">
                 <Container>
-                    <Navbar.Brand >{props.header ? props.header : "Props header"}</Navbar.Brand>
+                    <Navbar.Brand >{brand ? brand : "Props header"}</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ml-auto">
 
-                            {linkes.map((item, i) => (
-                                <Dropdown.Item eventKey={i} onClick={() => history.push(item.path)} >   {item.label}  </Dropdown.Item>
+                            {props.links.map((item, i) => (
+                                <Dropdown.Item key={i} eventKey={i} onClick={() => history.push(item.path)} >   {item.label}  </Dropdown.Item>
                             )
                             )}
 
@@ -37,21 +46,34 @@ const Layout = ({ children, ...props }) => {
         )
     }
 
+
+    useEffect(() => {
+        const minH = window.screen.height -
+        footerEl.current.clientHeight - 
+        navEl.current.clientHeight * 2
+    
+
+        setMinHeight(minH)
+        setHeigth(navEl.current.clientHeight)
+
+    }, []);
+
+        
     return (
         <>
-
-
-            <StHeader className="fixed-top">
+            <StHeader ref={navEl} className="fixed-top mb-3">
                 <Container fluid>
-                     <CollapseNavbarBootstrap />
+                    <CollapseNavbarBootstrap />
                 </Container>
             </StHeader>
 
-            <br /><br /><br /><br />
-            {children}
+            <div style={{paddingTop: heigth, minHeight: minHeight }}>
 
-            <StFooter>
-                <h1 >{props.footer ? props.footer : "Props Footer"}</h1>
+            {children}
+            </div>
+
+            <StFooter ref={footerEl}>
+                {props.footer}
             </StFooter>
 
         </>
@@ -65,10 +87,11 @@ export default Layout
 
 
 const StHeader = styled.header`
+
 min-height: 70px;
 background-color:#11999e;
 color: #40514e;
-margin-bottom: 120px;
+
 display:flex;
 align-items:center;
 justify-content:center;
@@ -78,15 +101,6 @@ justify-content:center;
 
 }
 
-.btn{
-    margin: 10px 1px auto 1px;
-    /* min-width: 100px; */
-    /* height: 50%; */
-    border-top-left-radius: 9999px;
-    border-top-right-radius: 9999px;
-    border-bottom-right-radius: 9999px;
-    border-bottom-left-radius: 9999px;
-}
 h1, h3{
     margin-right : auto;
     margin-left : 50%;

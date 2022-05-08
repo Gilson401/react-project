@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import dani from '../assets/images/logoDaniela.png'
 import cosmetic from '../assets/images/moda/cosmetic.JPG'
 import cosmetic0 from '../assets/images/moda/cosmetic0.JPG'
@@ -26,43 +26,9 @@ const Navbars = () => {
     const seta = 'https://www.restaurantejangada.com.br/wp-content/themes/jangada/assets/img/arrow-down.png'
     const stp = <StParag>{lorem}</StParag>
 
-    const analyticsFunc = (text) => {
-        console.log(text)
-    }
-
-
-
     return (
         <>
-            <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Navbar.Brand href="#home">
-                    <img
-                        alt="d"
-                        src={dani}
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                    />{' '}  Consultoria e Coaching de imagem
-                </Navbar.Brand>
-
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
-                <Navbar.Collapse id="responsive-navbar-nav">
-
-                    <Nav className="ml-auto">
-                        <Nav.Link href="#init">Home</Nav.Link>
-                        <Nav.Link eventKey={2} href="#second">  Comment 1     </Nav.Link>
-                        <Nav.Link eventKey={3} href="#third">  Comment 2   </Nav.Link>
-                        <Nav.Link eventKey={4} href="#banners">  Video    </Nav.Link>
-                        <Nav.Link eventKey={5} href="#contato">  Contato    </Nav.Link>
-                        <Nav.Link eventKey={6} href="#map">  Mapa    </Nav.Link>
-                    </Nav>
-
-                </Navbar.Collapse>
-
-            </Navbar>
-
-            <StConteudo>
+                     <StConteudo>
 
 
                 <Stdv padding={'100px'} id="init" image={cosmetic3}>
@@ -103,7 +69,7 @@ const Navbars = () => {
                                 </Roll>
                             </Col>
                             <Col>
-                                <Slide duration={2000} right onReveal={() => analyticsFunc('element revealed')} >
+                                <Slide duration={2000} right  >
                                     {stp}
 
                                 </Slide>
@@ -167,6 +133,7 @@ const Navbars = () => {
                             <br />
                             <Row>
                                 <iframe
+                                    title="iframe"
                                     className="mx-auto my-auto"
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3093.491634103779!2d-42.933763723580824!3d-22.772718470487895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9995d1c1761bb7%3A0x61313500f7b596b2!2sAssembl%C3%A9ia%20de%20Deus%20em%20Aldeia%20da%20Prata!5e0!3m2!1spt-BR!2sbr!4v1614374616746!5m2!1spt-BR!2sbr"
                                     width="97%"

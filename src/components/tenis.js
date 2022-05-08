@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import background from '../assets/images/tenis/tenis.png'
 import tenis from '../assets/images/tenis/tenisultramarine.png'
 import nike from '../assets/images/tenis/nike1.svg'
-import Slide from 'react-reveal/Slide';
+
 
 const Tenis = () => {
     return (

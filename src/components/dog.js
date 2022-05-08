@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Col, Container, Row } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import styled from 'styled-components'
 import Dog0 from '../assets/images/dog.jpg'
 import Dog1 from '../assets/images/dog1.JPG'
@@ -12,9 +12,9 @@ import { lorem } from '../util'
 
 const Dog = () => {
 
-const Item = (props) => {
+    const Item = (props) => {
 
-const Centertx = styled.div` 
+        const Centertx = styled.div` 
 display:flex;
 align-items:center;
 justify-content:center;
@@ -47,9 +47,9 @@ border-radius: 5px;
         <Container fluid>
 
             <Zoom bottom >
-                <StHeader>
-                    <h1>Animações com imagens de cães</h1>
-                </StHeader>
+
+                <h1>Animações com imagens de cães</h1>
+
             </Zoom>
             <StDiv>
                 <Item img={Dog0} />
@@ -144,18 +144,6 @@ height: 360px;
 }
 
 
-
-
-`
-
-const StHeader = styled.header`
-height: 100px;
-background-color:#11999e;
-color: #40514e;
-
-display:flex;
-align-items:center;
-justify-content:center;
 
 
 `

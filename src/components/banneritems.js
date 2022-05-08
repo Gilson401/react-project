@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Carousel, Col, Container, Row } from 'react-bootstrap'
 import styled from 'styled-components'
 
@@ -32,10 +32,11 @@ const BannerHome = () => {
 
                                 {bannerItens_redux.map((item, i) => (
 
-                                    <Carousel.Item>
+                                    <Carousel.Item key={i}>
                                         
 
                                         <iframe
+                                        title="iframe"
                                             width="760"
                                             height="515"
                                             src={item}
@@ -43,12 +44,7 @@ const BannerHome = () => {
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen>
                                         </iframe>
-                                        {/*                     
-                                        <Carousel.Caption >
-                                            <h3>{item.title}</h3>
-                                            <p>{item.coment}</p>
-                                        </Carousel.Caption> */}
-                                    </Carousel.Item>
+                                   </Carousel.Item>
                                 )
                                 )}
                             </Carousel>

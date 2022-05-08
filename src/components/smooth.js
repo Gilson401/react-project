@@ -91,7 +91,7 @@ height: 300px;
                 <Row xs={12} md={12} >                                  
                         {dogs.map((item, index) =>                        
                             <Zoom top>
-                                <StImg onClick={()=>start(index)} image={item}/>
+                                <StImg key={index} onClick={()=>start(index)} image={item}/>
                             </Zoom>                         
                         )}                       
                 </Row>

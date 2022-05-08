@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button,  Table, Container  } from 'react-bootstrap';
 import { ExcelRenderer } from 'react-excel-renderer';
 import styled from 'styled-components';
-import Layout from './layout/layout';
+
 
 const Excel = () => {
 
@@ -40,7 +40,7 @@ console.log('send')
 
     return (
 
-        <Layout header="Excel Load and Render">
+        
         <StContainer>
             <br/>
             <input type="file" onChange={fileHandler.bind(this)} style={{ "padding": "10px" }} />
@@ -101,7 +101,7 @@ console.log('send')
         <br/>
         
         </StContainer>
-        </Layout>
+        
     )
 }
 
