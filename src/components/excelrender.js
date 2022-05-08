@@ -1,107 +1,78 @@
 import React, { useState } from 'react'
-import { Button,  Table, Container  } from 'react-bootstrap';
+import { Button, Table, Container } from 'react-bootstrap';
 import { ExcelRenderer } from 'react-excel-renderer';
 import styled from 'styled-components';
 
 
 const Excel = () => {
 
-    const [state, setState] = useState({})
-    const hasLine = Object.keys(state).length > 0
+    const [state, setState] = useState({ rows: [[]]})
+    const hasLine = () =>  state.rows[0].length 
 
- 
-const send = () => { 
-console.log('send')
-}
+
+    const send = () => {
+
+        if (hasLine()){
+            alert('Os dados foram submetidos!')
+        }else{
+            alert('Necessário carregar itens submetidos!')
+        }
+    }
 
     const fileHandler = (event) => {
         let fileObj = event.target.files[0];
 
-        //just pass the fileObj as parameter
         ExcelRenderer(fileObj, (err, resp) => {
-            
             if (err) {
-                console.log(err);
+                alert(`Não foi possível carragar o arquivo! ${err}`)
             }
             else {
                 resp.rows.splice(0, 1)
-
-                setState({                   
+                setState({
                     rows: resp.rows
                 });
 
             }
         });
-
     }
 
 
-   
+
 
     return (
 
-        
         <StContainer>
-            <br/>
-            <input type="file" onChange={fileHandler.bind(this)} style={{ "padding": "10px" }} />
+<div className='d-flex align-items-center justify-content-between w-100 mt-3'>
 
-            <hr />
-            <br/>
+            <input type="file" onChange={fileHandler.bind(this)}  accept=".xls,.xlsx" />
+
+            <Button disabled={!state.rows[0].length} onClick={send} variant="outline-primary">Submeter</Button>
+</div>
+
             {hasLine ?
-            <>
-               
-
-            <Scrolable>
-                <Table striped hover>
-                    <thead>
-                        <tr>
-                            <THeadItem>Aluno</THeadItem>
-                            <THeadItem>Matrícula</THeadItem>
-                            <THeadItem>Ano Letivo</THeadItem>
-                            <THeadItem>Turma</THeadItem>
-                            <THeadItem>Disciplina</THeadItem>
-                            <THeadItem>Bimestre</THeadItem>
-                            <THeadItem>Recuperação?</THeadItem>
-                            <THeadItem>Nota</THeadItem>                           
-
-                        </tr>
-                    </thead>
-                    <tbody>
-
-
-                        {state.rows.map((catg, i) => (
-                                                
-                            <tr key={i}>
-                                <td>{catg[0].toUpperCase()}</td>
-                                <td>{catg[1]}</td>
-                                <td>{catg[2]}</td>
-                                <td>{catg[3]}</td>
-                                <td>{catg[4].toUpperCase()}</td>
-                                <td>{catg[5]}</td>
-                                <td>{catg[6].toUpperCase()}</td>
-                                <td>{catg[7]}</td>
-                            </tr>
-            
-                        
-                        ))} 
-
-                    </tbody>
-                </Table>
-            </Scrolable>
-
-                
-                
-                
-                <br/>
-                <Button onClick={()=>send} variant="outline-primary">Submeter</Button>
-              </>
+                <>
+                    <Scrolable>
+                        <Table striped hover>
+                            <thead>
+                                <tr>
+                                    {state.rows[0].map((catg, i) => (
+                                        <THeadItem key={i}> {catg} </THeadItem>
+                                    ))}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {state.rows.map((catg, i) => (
+                                    <tr key={i}>
+                                        {catg.map((key, index) => (<td key={index} > {key} </td>))}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </Table>
+                    </Scrolable>
+                    
+                </>
                 : <h4>Clique no botão escolher arquivo para carregar a lista em excel.</h4>}
-
-        <br/>
-        <br/>
-        
         </StContainer>
-        
     )
 }
 
@@ -196,7 +167,7 @@ const THeadItem = styled.th`
     background: #666;
     color:#eee;
     text-align:center;
-    :nth-child(1){  width: 20%; }
+    /* :nth-child(1){  width: 20%; }
     :nth-child(2){  width: 10%; }
     :nth-child(3){  width: 5%; }
     :nth-child(4){  width: 5%; }
@@ -204,7 +175,7 @@ const THeadItem = styled.th`
     :nth-child(6){  width: 5%; }
     :nth-child(7){  width: 10%; }
     :nth-child(8){  width: 10%; }
-    :nth-child(9){  width: 10%; }
+    :nth-child(9){  width: 10%; } */
 
 `
 

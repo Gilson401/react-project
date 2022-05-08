@@ -33,7 +33,7 @@ padding-top: 20px;
 
                 <Col xs={12}  md={8}>
                     <Slide right>
-                        <Centertx > {lorem(100)}  </Centertx>
+                        <Centertx > {lorem(700)}  </Centertx>
                     </Slide>
                 </Col>
             </Row>

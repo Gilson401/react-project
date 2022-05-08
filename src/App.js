@@ -4,7 +4,6 @@ import { Route, Router, Switch } from 'react-router-dom'
 import Home from './components/home';
 import Dog from './components/dog';
 import Smooth from './components/smooth';
-import Glass from './components/glass';
 import history from './config/history';
 import Excel from './components/excelrender';
 import Cms from './components/cms';
@@ -27,12 +26,8 @@ const links = [
         component: Smooth
     },
     {
-        path: "/glass", label: "Glass",
-        description: "Glasmorphism", component: Glass
-    },
-    {
         path: "/excel", label: "Excel",
-        description: "Excel numa aplicação do mundo real. Quem trabalha em escritório e numca precisou importar uma planilha de excel?",
+        description: "Excel numa aplicação do mundo real. Quem trabalha em escritório e numca precisou importar uma planilha de excel? Esta página não é para mobile.",
         component: Excel
     },
     {

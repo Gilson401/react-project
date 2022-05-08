@@ -71,7 +71,7 @@ box-shadow: 5px 10px 10px #888888;
         <StContainer fluid>
             <StDiv>
                 <Zoom bottom >
-                    <h1 className='text-center'>Select your Dog!</h1>
+                    <h1 className='text-center'>Escolha um doguinho.</h1>
                 </Zoom>
                 <Row >
                     <Col>
@@ -80,9 +80,9 @@ box-shadow: 5px 10px 10px #888888;
                 </Row>
                 <Row xs={12} className="my-3">
                     {dogs.map((item, index) =>
-                        <Col xs={4} md={1}>
-                            <StImg className="w-100 h-100" key={index} onClick={() => start(index)} >
-                                <img src={item} className="w-100 h-100" alt={item} />
+                        <Col xs={4} md={1} className="my-1" >
+                            <StImg className="w-100 h-100 " key={index} onClick={() => start(index)} >
+                                <img src={item} className="rounded-sm w-100 h-100" alt={item} />
                             </StImg>
 
                         </Col>

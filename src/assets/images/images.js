@@ -21,12 +21,12 @@ import logoDaniela from './logoDaniela.png'
 import dog7 from './dog7.JPG'
 import dog2 from './dog2.JPG'
 import smooth from './smooth.PNG'
-
+import excel from './excel.PNG'
 
 
 
 const images = {
-    areia,    dog1,    dog,    dog10,    dog3,    dog6,    dog9,    mar,    dog2, doguinho,
+    areia,    dog1,    dog,    dog10,    dog3,    dog6,    dog9,    mar,    dog2, doguinho, excel,
     toras,    buffet,    dog11,    dog4,    coelho,    dog8,    dog5,    logoDaniela,    dog7,
     smooth
 };
