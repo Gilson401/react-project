@@ -15,7 +15,7 @@ import Zoom from 'react-reveal/Zoom';
 import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
 import Flip from 'react-reveal/Flip';
-import { lorem } from '../util'
+import { lorem } from '../util/lorem'
 import Roll from 'react-reveal/Roll';
 import FormContact from './formcontact'
 import BannerHome from './banneritems'
@@ -24,7 +24,7 @@ import BannerHome from './banneritems'
 
 const Navbars = () => {
     const seta = 'https://www.restaurantejangada.com.br/wp-content/themes/jangada/assets/img/arrow-down.png'
-    const stp = <StParag>{lorem}</StParag>
+    const stp = <StParag>{lorem(200)}</StParag>
 
     return (
         <>

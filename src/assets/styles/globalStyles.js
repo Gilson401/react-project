@@ -38,6 +38,11 @@ padding: 10px 0 0 15px;
 box-shadow: 5px 5px 5px 5px rgb(205, 209, 213) ;
 
 }
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
 `
 
 export default GlobalStyle

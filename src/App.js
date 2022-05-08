@@ -17,7 +17,7 @@ import Layout from './components/layout/layout';
 const links = [
     { path: "/", label: "Home", description: "Its me", component: Home },
     {
-        path: "/dog", label: "Dogs",
+        path: "/doguinho", label: "Dogs",
         description: "Aplicação de React Reveal. Os elementos são exibidos na tela a medida que o scroll é acionado",
         component: Dog
     },

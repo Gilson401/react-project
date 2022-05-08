@@ -13,11 +13,9 @@ import Dog8 from '../assets/images/dog8.JPG'
 import Dog9 from '../assets/images/dog9.JPG'
 import Dog10 from '../assets/images/dog10.JPG'
 import Dog11 from '../assets/images/dog11.JPG'
-
 import Zoom from 'react-reveal/Zoom';
-import LightSpeed from 'react-reveal/LightSpeed';
 import Slide from 'react-reveal/Slide';
-import { lorem } from '../util'
+import { lorem } from '../util/lorem'
 
 const Smooth = () => {
 
@@ -28,12 +26,12 @@ const Smooth = () => {
     const start = (index) => {
         setFire(index)
         audio.play()
-      }
+    }
 
     const Item = (props) => {
 
         const Centertx = styled.div`
-padding: 65px;
+padding: 1rem;
 display:flex;
 flex-direction: column;
 align-items:center;
@@ -42,28 +40,25 @@ word-wrap:break-word;
 border: solid 1px transparent;
 border-radius:5px;
 box-shadow: 5px 10px 10px #888888;
-height: 300px;
+
 `
 
         return (
             <Row>
-                <br />
-                <hr />
-                <Col xs={3}>
+                <Col xs={12} md={3}>
                     <Slide left>
-                        <Bgimage image={props.img}>  </Bgimage>
+                        <Bgimage className='mx-auto' image={props.img}>  </Bgimage>
                     </Slide>
                 </Col>
 
-                <Col xs={8}>
+                <Col xs={12} md={9}>
                     <Slide right>
-                        <Centertx > 
+                        <Centertx >
                             <h3> {`Dog number : ${fire + 1}`} </h3>
-                            <br/>
-                            <p> 
-                                {lorem}
-                            </p>  
-                            </Centertx>
+                            <p>
+                                {lorem(150)}
+                            </p>
+                        </Centertx>
                     </Slide>
                 </Col>
             </Row>
@@ -73,56 +68,40 @@ height: 300px;
     }
 
     return (
-        <Container fluid>
-
-            <Zoom bottom >
-                <StHeader>
-                    <h1>Select your Dog!</h1>
-                </StHeader>
-            </Zoom>
-           
+        <StContainer fluid>
             <StDiv>
-            
+                <Zoom bottom >
+                    <h1 className='text-center'>Select your Dog!</h1>
+                </Zoom>
                 <Row >
-                    <Item img={dogs[fire]} />
+                    <Col>
+                        <Item img={dogs[fire]} />
+                    </Col>
                 </Row>
-                <br />
+                <Row xs={12} className="my-3">
+                    {dogs.map((item, index) =>
+                        <Col xs={4} md={1}>
+                            <StImg className="w-100 h-100" key={index} onClick={() => start(index)} >
+                                <img src={item} className="w-100 h-100" alt={item} />
+                            </StImg>
 
-                <Row xs={12} md={12} >                                  
-                        {dogs.map((item, index) =>                        
-                            <Zoom top>
-                                <StImg key={index} onClick={()=>start(index)} image={item}/>
-                            </Zoom>                         
-                        )}                       
+                        </Col>
+                    )}
                 </Row>
-
-
             </StDiv>
-
-            <LightSpeed right>
-                <StFooter>
-                    Obrigado !
-            </StFooter>
-            </LightSpeed  >
-        </Container>
-
-
+        </StContainer>
     )
 }
 
 export default Smooth
 
 
+const StContainer = styled(Container)`
+background-color:#e4f9f5;
+`
 
-
-const StImg = styled.img`
-background-image: url(${props => props.image});
-background-size: 100% 100%;
-width: 100px;
-height: 150px;
-/* box-shadow: 5px 10px 10px #888888; */
+const StImg = styled.div`
 border-radius: 5px;
-margin: 10px;
 cursor: pointer;
 transition : 500ms;
 
@@ -138,17 +117,15 @@ box-shadow: 5px 10px 10px #888888;
 const Bgimage = styled.div`
 color: white;
 background-image: url(${props => props.image});
-/* background-size: 300px 600px; */ //Deixa o tamanho da imagem fixada em px
-background-size: 100% 100%;  //ajusta as dimensões da imagem às da DIV
+background-size: 100% 100%; 
 background-repeat: no-repeat;
-background-color: blue; //esta cor aparece se tua imagem não for carregada
+background-color: blue; 
 width: 200px;
 height: 300px;
 max-width: 85vw;
 border-radius: 5px;
 transition : 1000ms;
 padding-top: 10px;
-margin-left: 10px;
 display:flex;
 align-items:flex-start;
 justify-content:center;
@@ -158,78 +135,24 @@ box-shadow: 5px 10px 10px #888888;
 :hover {
 
 transition : 2000ms;
-
 color: black;
 font-size: 90px;
 font-weight : 1900;
 
 }
 `
-/**Div */
 const StDiv = styled.div`
 background-color:#e4f9f5;
 min-height: 100vh;
 padding: 20px;
 
-.class0{
-color:blue;
-background-color:grey;
-padding: 10px;
-background-image: url(${Dog0});
-}
-
-.class1{
-color:red;
-background-color:black;
-padding: 10px;
-background-image: url(${Dog1});
-}
-
-.class2{
-color:black;
-padding: 10px;
-background-image: url(${Dog2});
-}
-
-.class3{
-color:black;
-padding: 10px;
-background-image: url(${Dog3});
-}
-
 .center{
-    background-size: 100% 100%;  //ajusta as dimensões da imagem às da DIV
-    display:flex;
+background-size: 100% 100%;  
+display:flex;
 align-items:center;
 justify-content:center;
 transition : 1000ms;
 width: 250px;
 height: 360px;
 }
-
-
-
-
-`
-
-const StHeader = styled.header`
-height: 70px;
-background-color:#11999e;
-color: #40514e;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-
-`
-
-const StFooter = styled.footer`
-height: 200px;
-background-color:#40514e;
-color: #30e3ca;
-font-size:120px;
-display:flex;
-align-items:center;
-justify-content:center;
 `

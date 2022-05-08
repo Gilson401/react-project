@@ -6,9 +6,8 @@ import Dog1 from '../assets/images/dog1.JPG'
 import Dog2 from '../assets/images/dog2.JPG'
 import Dog3 from '../assets/images/dog3.JPG'
 import Zoom from 'react-reveal/Zoom';
-import LightSpeed from 'react-reveal/LightSpeed';
 import Slide from 'react-reveal/Slide';
-import { lorem } from '../util'
+import { lorem } from '../util/lorem'
 
 const Dog = () => {
 
@@ -19,22 +18,22 @@ display:flex;
 align-items:center;
 justify-content:center;
 word-wrap:break-word;
-border: solid 1px transparent;
 border-radius: 5px;
+margin-bottom: 10px;
+padding-top: 20px;
 `
         return (
-            <Row>
-                <br />
-                <hr />
-                <Col xs={4}>
+            <Row className='pb-3'>
+                
+                <Col xs={12}  md={4}>
                     <Zoom top>
                         <Bgimage image={props.img}>  </Bgimage>
                     </Zoom>
                 </Col>
 
-                <Col xs={8}>
+                <Col xs={12}  md={8}>
                     <Slide right>
-                        <Centertx > {lorem}  </Centertx>
+                        <Centertx > {lorem(100)}  </Centertx>
                     </Slide>
                 </Col>
             </Row>
@@ -44,29 +43,27 @@ border-radius: 5px;
     }
 
     return (
-        <Container fluid>
+        <StContainer fluid>
 
+            <StDiv>
             <Zoom bottom >
 
-                <h1>Animações com imagens de cães</h1>
+                <h1 className='text-center'>Doguinhos animados</h1>
 
             </Zoom>
-            <StDiv>
+
                 <Item img={Dog0} />
-                <br />
+
                 <Item img={Dog1} />
-                <br />
+
                 <Item img={Dog2} />
-                <br />
+
                 <Item img={Dog3} />
+            
+            
             </StDiv>
 
-            <LightSpeed right>
-                <StFooter>
-                    Obrigado !
-                </StFooter>
-            </LightSpeed  >
-        </Container>
+        </StContainer>
 
 
     )
@@ -74,14 +71,17 @@ border-radius: 5px;
 
 export default Dog
 
+const StContainer = styled(Container)`
+background-color:#e4f9f5;
+`
+
+
 const Bgimage = styled.div`
 color: white;
 background-image: url(${props => props.image});
-/* background-size: 300px 600px; */ //Deixa o tamanho da imagem fixada em px
-background-size: 100% 100%;  //ajusta as dimensões da imagem às da DIV
+background-size: 100% 100%; 
 background-repeat: no-repeat;
-background-color: blue; //esta cor aparece se tua imagem não for carregada
-/* width: 400px; */
+background-color: blue; 
 height: 600px;
 max-width: 85vw;
 border-radius: 5px;
@@ -103,7 +103,7 @@ font-weight : 1900;
 }
 `
 const StDiv = styled.div`
-background-color:#e4f9f5;
+
 min-height: 100vh;
 padding: 10px;
 
@@ -148,12 +148,3 @@ height: 360px;
 
 `
 
-const StFooter = styled.footer`
-height: 200px;
-background-color:#40514e;
-color: #30e3ca;
-font-size:120px;
-display:flex;
-align-items:center;
-justify-content:center;
-`
