@@ -1,10 +1,8 @@
 {
-  "name": "personal",
+  "name": "react-project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@nivo/core": "^0.67.0",
-    "@nivo/scatterplot": "^0.67.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
