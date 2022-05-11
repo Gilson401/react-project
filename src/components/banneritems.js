@@ -4,60 +4,43 @@ import { Carousel, Col, Container, Row } from 'react-bootstrap'
 import styled from 'styled-components'
 
 
-
-
-//TODO: o professor colocou outro modelo de banner customizado
-/**BannerHome, vou colocar no carrousel os produtos que estão em highlight/destaque */
-const BannerHome = () => {
-
-
+const Carrousel = () => {
     const bannerItens_redux = [
         "https://www.youtube.com/embed/BsTKPPImLWY?controls=0",
         "https://www.youtube.com/embed/t4ClFb29Z6k?controls=0",
         "https://www.youtube.com/embed/ARykFaYlCD8?controls=0",
         "https://www.youtube.com/embed/7Me2vVKJrRA?controls=0"]
 
-
-
-
-
-
     return (
         <Container>
             <Row >
                 <ColBgDark >
-                    <div >
-                        <Banner hidden={false} >
-                            <Carousel>
-
-                                {bannerItens_redux.map((item, i) => (
-
-                                    <Carousel.Item key={i}>
-                                        
-
+                    <Banner hidden={false} >
+                        <Carousel>
+                            {bannerItens_redux.map((item, i) => (
+                                <Carousel.Item key={i}>
+                                    <div className="iframe-container">
                                         <iframe
-                                        title="iframe"
-                                            width="760"
-                                            height="515"
+                                            title="iframe"
+                                            className="video"
                                             src={item}
                                             frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen>
                                         </iframe>
-                                   </Carousel.Item>
-                                )
-                                )}
-                            </Carousel>
-                        </Banner>
-
-                    </div>
+                                    </div>
+                                </Carousel.Item>
+                            )
+                            )}
+                        </Carousel>
+                    </Banner>
                 </ColBgDark>
             </Row>
         </Container>
     )
 }
 
-export default BannerHome
+export default Carrousel
 
 
 const ColBgDark = styled(Col)`
@@ -89,4 +72,21 @@ const Banner = styled.div`
     .carousel-indicators {
         bottom: -50px;
     }
+
+    .iframe-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
 `

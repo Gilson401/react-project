@@ -18,7 +18,7 @@ import Flip from 'react-reveal/Flip';
 import { lorem } from '../util/lorem'
 import Roll from 'react-reveal/Roll';
 import FormContact from './formcontact'
-import BannerHome from './banneritems'
+import Carrousel from './banneritems'
 
 
 
@@ -28,7 +28,7 @@ const Navbars = () => {
 
     return (
         <>
-                     <StConteudo>
+            <StConteudo>
 
 
                 <Stdv padding={'100px'} id="init" image={cosmetic3}>
@@ -45,9 +45,6 @@ const Navbars = () => {
                             <Fade forever top duration={2000}>
                                 <img alt="d" className="seta" src={seta}></img>
                             </Fade>
-
-                            <br />
-                            <br />
                             <h4 className="my-auto blackfundo" >ROLE PARA BAIXO</h4>
 
                         </Row>
@@ -86,17 +83,17 @@ const Navbars = () => {
                             {stp}
                         </Slide>
 
-                        <Row>
-                            <Col>
+                        <Row >
+                            <Col xs={12} md={6}>
                                 <Roll left duration={2500}>
-                                    <img alt="d" className="imgclass" src={bota1}
+                                    <img alt="bota" className="imgclass" src={bota1}
                                     />
                                 </Roll>
                             </Col>
 
-                            <Col>
+                            <Col xs={12} md={6}>
                                 <Roll right duration={2500}>
-                                    <img alt="d" className="imgclass" src={boina}
+                                    <img alt="boina" className="imgclass" src={boina}
                                     />
                                 </Roll>
                             </Col>
@@ -104,9 +101,9 @@ const Navbars = () => {
                     </Container>
                 </Stdv>
 
-                <Stdv padding={'150px'} id="banners" image={bolsa}>
+                <Stdv id="banners" image={bolsa}>
                     <Flip left>
-                        <BannerHome />
+                        <Carrousel />
                     </Flip>
                 </Stdv>
 
@@ -145,10 +142,6 @@ const Navbars = () => {
                         </Zoom>
                     </Container>
                 </Stdv>
-
-
-
-
             </StConteudo>
         </>
     )
@@ -170,8 +163,7 @@ font-size: 1.1rem;
 const Stdv = styled.section`
 transition : "all 2s";
 background-image: url(${props => props.image});
-background-color: #84C9E9; /* Used if the image is unavailable */
-height: 100vh; /* You must set a specified height */
+background-color: #84C9E9; 
 background-position: center;
 background-repeat: repeat;
 background-size: cover;
@@ -206,7 +198,7 @@ margin-left:50%;
     height: 350px;
     vertical-align: middle;
     border-style: none;
-margin-left:-50px;
+/* margin-left:-50px; */
 }
 
 .text-center{
