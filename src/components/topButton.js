@@ -93,18 +93,18 @@ const Divanim = styled.div`
 
 const Btnfixed = styled.button`
 display:${props=> props.exibe ? `block`:`none`};
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none !important; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: rgb(0, 210, 40, 0.91)!important; /* rgb(20, 26, 40, 0.91); Set a background color */
-    color: black; /* Text color */
-    cursor: ${props=> props.pointer ? `pointer`:`auto`} !important ; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 50%; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
+    position: fixed; 
+    bottom: 20px; 
+    right: 30px; 
+    z-index: 99; 
+    border: none !important; 
+    outline: none; 
+    background-color: rgb(0, 210, 40, 0.91)!important; 
+    color: black; 
+    cursor: ${props=> props.pointer ? `pointer`:`auto`} !important ; 
+    padding: 15px; 
+    border-radius: 50%; 
+    font-size: 18px; 
     transition-timing-function: ease;
     transition: background-color 2s;
     :hover {

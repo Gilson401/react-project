@@ -68,8 +68,6 @@ height: 100%;
 background: linear-gradient(90deg, rgba(255, 2, 2, 0.2),  rgba(255, 255, 255, 0.2) , rgba(255, 2, 2, 0.2));
 border-radius: 10px;
 backdrop-filter: blur(50px);
-/* animation: animation2 5s infinite; */
-
 }
 
 @keyframes mymove {

@@ -28,9 +28,9 @@ const Paralax = () => {
     return (
 
         <StConteudo >
-            <br />
+            
             <h1>Obrigado por assistir!</h1>
-            <br />
+            
             <h4>Role para baixo e veja as imagens de fundo alternarem.</h4>
 
             {imagens.map((item, index) =>
@@ -49,7 +49,7 @@ const ParaBlock = styled.div`
 height: 600px;
 margin: 30px auto;
 
-/* For paral lax effect */
+
 background-attachment: fixed;
 background-position: center;
 background-repeat : no-repeat;

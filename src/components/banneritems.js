@@ -52,10 +52,8 @@ const ColBgDark = styled(Col)`
 const Banner = styled.div`
     margin-top : 5px;
     margin-bottom : 40px;
-    /* width:100%; */
     color: white;
     text-align:center;
-    /* background-color: rgba(10,10,10,0.7); */
     h3{
         margin-top : 45px;
     }
@@ -86,7 +84,4 @@ const Banner = styled.div`
     width: 100%;
     height: 100%;
 }
-
-
-
 `

@@ -166,16 +166,6 @@ const Scrolable = styled.div`
 const THeadItem = styled.th`
     background: #666;
     color:#eee;
-    text-align:center;
-    /* :nth-child(1){  width: 20%; }
-    :nth-child(2){  width: 10%; }
-    :nth-child(3){  width: 5%; }
-    :nth-child(4){  width: 5%; }
-    :nth-child(5){  width: 25%; }
-    :nth-child(6){  width: 5%; }
-    :nth-child(7){  width: 10%; }
-    :nth-child(8){  width: 10%; }
-    :nth-child(9){  width: 10%; } */
-
+    text-align:center;   
 `
 

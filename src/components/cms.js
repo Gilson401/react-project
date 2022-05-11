@@ -127,7 +127,7 @@ const Navbars = () => {
                         {stp}
 
                         <Zoom duration={2700} bottom>
-                            <br />
+
                             <Row>
                                 <iframe
                                     title="iframe"
@@ -198,7 +198,6 @@ margin-left:50%;
     height: 350px;
     vertical-align: middle;
     border-style: none;
-/* margin-left:-50px; */
 }
 
 .text-center{
