@@ -27,7 +27,7 @@ const links = [
     },
     {
         path: "/excel", label: "Excel",
-        description: "Excel numa aplicação do mundo real. Quem trabalha em escritório e numca precisou importar uma planilha de excel? Esta página não é para mobile.",
+        description: "Excel numa aplicação do mundo real. Quem trabalha em escritório e nunca precisou importar uma planilha de excel? Esta página não é para mobile.",
         component: Excel
     },
     {
@@ -36,7 +36,7 @@ const links = [
         component: Cms
     },
     {
-        path: "/paralax", label: "Paralax", description: "Aplicando imagens de fundo dinâmicas",
+        path: "/paralax", label: "Paralax", description: "Aplicando imagens de fundo dinâmicas utilizando efeito paralax.",
         component: Paralax
     },
     {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Navbar, Row } from 'react-bootstrap'
+import { Navbar} from 'react-bootstrap'
 import styled from 'styled-components'
 import getImageByKey from '../assets/images/images';
 
@@ -22,7 +22,7 @@ const Tenis = () => {
 
             <Stitem >
 
-                <img className="responsive" src={getImageByKey('tenis')} alt="nikelogo" />
+                <img className="responsive" src={getImageByKey('tenisNike')} alt="nikelogo" />
 
                 <StTexto>
 

@@ -6,12 +6,36 @@ import App from '../App'
 import getImageByKey from '../assets/images/images';
 
 const Home = () => {
+
+const links = () => {
+ const original =  [...App.links] 
+ original.shift()
+ return original 
+}
     return (
 
         <StContainer>
-            {App.links.map((item, index) => (
+
+<div>
+<h1>
+
+Bem-vindos ao React Project Demo. 
+</h1>
+
+<p>
+Este projeto é uma demonstração dos meus conhecimentos em Front End React.
+Ele contém styled-components, bootstrap, react-bootstrap, react-excel-renderer, react-reveal, styled-components,
+Ele receberá atualizações toda vez que eu aplicar alguma nova feature.
+</p>
+
+</div>
+
+<div>
+
+
+            {links().map((item, index) => (
                 <Row key={index}
-                    className="rounded my-2 border border-secondary py-3">
+                    className="rounded my-2 border py-3">
 
                     <Col xs={4} md={2} >
                         <button onClick={() => history.push(item.path)} className="border-0">
@@ -25,6 +49,7 @@ const Home = () => {
                     </Col>
                 </Row>
             ))}
+            </div>
         </StContainer>
     )
 }
