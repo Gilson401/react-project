@@ -19,15 +19,16 @@ import { lorem } from '../util/lorem'
 import Roll from 'react-reveal/Roll';
 import FormContact from './formcontact'
 import Carrousel from './banneritems'
+import getImageByKey from '../assets/images/images'
 
 
 
 const Navbars = () => {
-    const seta = 'https://www.restaurantejangada.com.br/wp-content/themes/jangada/assets/img/arrow-down.png'
+    
     const stp = <StParag>{lorem(200)}</StParag>
 
     return (
-        <>
+       
             <StConteudo>
 
 
@@ -43,10 +44,9 @@ const Navbars = () => {
 
                         <Row >
                             <Fade forever top duration={2000}>
-                                <img alt="d" className="seta" src={seta}></img>
+                                <img alt="d" className="seta" src={getImageByKey("arrowDown")}></img>
                             </Fade>
                             <h4 className="my-auto blackfundo" >ROLE PARA BAIXO</h4>
-
                         </Row>
                     </Container>
                 </Stdv>
@@ -143,7 +143,7 @@ const Navbars = () => {
                     </Container>
                 </Stdv>
             </StConteudo>
-        </>
+        
     )
 }
 

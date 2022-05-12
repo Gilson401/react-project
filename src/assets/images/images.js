@@ -23,16 +23,21 @@ import dog2 from './dog2.JPG'
 import smooth from './smooth.PNG'
 import excel from './excel.PNG'
 import cms from './cms.PNG'
-
+import arrowDown from './arrowDown.png'
+import paralax0 from './paralax0.jpg'
+import paralax1 from './paralax1.jpg'
+import paralax2 from './paralax2.jpg'
+import paralax3 from './paralax3.jpg'
+import paralax from './paralax.PNG'
 
 const images = {
-    areia,    dog1,    dog,    dog10,    dog3,    dog6,    dog9,    mar,    dog2, doguinho, excel,
-    toras,    buffet,    dog11,    dog4,    coelho,    dog8,    dog5,    logoDaniela,    dog7,
-    smooth, cms
+    areia, dog1, dog, dog10, dog3, dog6, dog9, mar, dog2, doguinho, excel,
+    toras, buffet, dog11, dog4, coelho, dog8, dog5, logoDaniela, dog7,
+    smooth, cms, arrowDown, paralax, paralax0, paralax1, paralax2, paralax3
 };
 
 function getImageByKey(key) {
-const temp = images[key] ? images[key] : notfound  
+    const temp = images[key] ? images[key] : notfound
 
     return temp
 }
