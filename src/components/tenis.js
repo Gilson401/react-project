@@ -1,61 +1,50 @@
 import React from 'react'
-import {  Col, Navbar, Row } from 'react-bootstrap'
+import { Col, Navbar, Row } from 'react-bootstrap'
 import styled from 'styled-components'
-
-import background from '../assets/images/tenis/tenis.png'
-import tenis from '../assets/images/tenis/tenisultramarine.png'
-import nike from '../assets/images/tenis/nike1.svg'
+import getImageByKey from '../assets/images/images';
 
 
 const Tenis = () => {
     return (
 
-        <>
-
-            <StConteudo id="map" image={background}>
+        <StConteudo id="map" image={getImageByKey('background')}>
             <Navbar className="justify-content-between internalNav">
-            <img src={nike} alt="nikelogo"/>
+                <img src={getImageByKey('nike')} alt="nikelogo" />
 
-            <div className="links">
-                <a href="#sectionNews">News</a>
-                <a href="#sectionShop">Shop</a>
-                <a href="#sectionSend">Send</a>
-                <a href="#sectionfaq">faq</a>
-            </div>
+                <div className="links">
+                    <a href="#sectionNews">News</a>
+                    <a href="#sectionShop">Shop</a>
+                    <a href="#sectionSend">Send</a>
+                    <a href="#sectionfaq">faq</a>
+                </div>
 
             </Navbar>
 
             <Stitem >
 
-            <img className="responsive" src={tenis} alt="nikelogo"/>
-  
-            <StTexto>
-                <Row>
-                    <Col>
-                        <div className="produto mx-auto">Nike Air 70</div>
-                        <div className="preco text-center">U$: 75</div>
-                        <div className="text-center">
-                        <Stbutton>Buy Now</Stbutton>
-                        </div>
-                    </Col>
-                </Row>
-            </StTexto>
+                <img className="responsive" src={getImageByKey('tenis')} alt="nikelogo" />
+
+                <StTexto>
+
+                    <div className="produto mx-auto">Nike Air 70</div>
+                    <div className="preco text-center">U$: 75</div>
+                    <div className="badge badge-dark">
+                        <BuyLink href="#" >Buy Now</BuyLink>
+                    </div>
+
+                </StTexto>
 
             </Stitem>
-            
-            </StConteudo>
 
-            
+        </StConteudo>
 
-
-        </>
     )
 }
 
 export default Tenis
 
 
-const Stbutton = styled.button`
+const BuyLink = styled.a`
 width: 100px;
 height: 30px;
 border: none;
@@ -108,7 +97,7 @@ left: 15%;
 top: 15%;
 
 .responsive {
-  width: 100%;
+  width: 75%;
   height: auto;
 }
 

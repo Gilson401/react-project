@@ -30,10 +30,16 @@ import paralax2 from './paralax2.jpg'
 import paralax3 from './paralax3.jpg'
 import paralax from './paralax.PNG'
 
+import background from './tenis/tenis.png'
+import tenis from './tenis/tenisultramarine.png'
+import nike from './tenis/nike1.svg'
+
+
 const images = {
     areia, dog1, dog, dog10, dog3, dog6, dog9, mar, dog2, doguinho, excel,
     toras, buffet, dog11, dog4, coelho, dog8, dog5, logoDaniela, dog7,
-    smooth, cms, arrowDown, paralax, paralax0, paralax1, paralax2, paralax3
+    smooth, cms, arrowDown, paralax, paralax0, paralax1, paralax2, paralax3, background,
+    tenis,  nike
 };
 
 function getImageByKey(key) {

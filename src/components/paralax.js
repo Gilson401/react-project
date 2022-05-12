@@ -32,7 +32,7 @@ const Paralax = () => {
 
         <Container >
             
-            <h1>Obrigado por assistir!</h1>
+            <h1>Paralax Background Images</h1>
             
             <h4>Role para baixo e veja as imagens de fundo alternarem.</h4>
 
